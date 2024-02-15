@@ -1,0 +1,218 @@
+
+:root {
+	color-scheme: light;
+
+	/* MAIN */
+	--main-color: #333;
+	--main-bg-color: #e1e1e1;
+	--main-bg-image: url("images/preview.png");
+
+	/* LOADING */
+	--loading-color: #000;
+
+	/* LOGIN */
+	--login-color: #eee;
+	--login-bg-color: rgba(0,0,0,0.5);
+	--login-box-shadow: none;
+	--login-border: none;
+	--login-border-radius: 7px;
+
+	/* MENU */
+	--dropdown-menu-color: #333;
+	--dropdown-menu-bg-color: #fff;
+	--dropdown-menu-hover-bg-color: #757575;
+	--dropdown-menu-hover-color: #eee;
+	--dropdown-menu-disable-color: #999;
+
+	/* FOLDERS */
+	--folders-color: #333;
+	--folders-disabled-color: #4E4459;
+	--folders-selected-color: #eee;
+	--folders-selected-bg-color: rgba(0,0,0,0.5);
+	--folders-focused-color: #eee;
+	--folders-focused-bg-color: rgba(0,0,0,0.7);
+	--folders-hover-color: #eee;
+	--folders-hover-bg-color: rgba(0,0,0,0.5);
+	--folders-drop-color: #eee;
+	--folders-drop-bg-color: rgba(0,0,0,0.5);
+
+	/* SETTINGS */
+	--settings-menu-color: #333;
+	--settings-menu-selected-color: #eee;
+	--settings-menu-selected-bg-color: rgba(0,0,0,0.5);
+	--settings-menu-hover-color: #eee;
+	--settings-menu-hover-bg-color: rgba(0,0,0,0.5);
+
+	/* MESSAGE LIST */
+	--message-list-toolbar-bg-color: #eee;
+}
+
+.thm-message-list-top-toolbar, .thm-message-list-bottom-toolbar {
+    background-image: linear-gradient(to bottom, #f4f4f4, #dfdfdf) !important;
+    background-repeat: repeat-x !important;
+}
+
+a[class="btn btn-logout fontastic"], .messageListItem .flagParent, .messageListItem .sizeParent, .messageListItem time {
+	margin-top: auto!important;
+	margin-bottom: auto!important;
+}
+
+.messageListItem {
+	font-size: 100%;
+	padding: 4px 0;
+}
+
+[class*=" icon-"]:not(a[class*="icon-folder-add"]):not(.attachmentIcon>*), [class^="icon-"]:not(.icon-spinner) {
+    width: 16px;
+    height: 16px;
+    line-height: 17px;
+    font-size: 16px;
+    vertical-align: text-top;
+}
+
+.btn {
+	text-shadow: none;
+}
+
+.btn.buttonCompose.btn-success {
+	height: 28px;
+	box-sizing: unset!important;
+}
+
+#top-system-dropdown-id i {
+	vertical-align: text-bottom;
+}
+
+ul[class="b-folders-system"], #V-SettingsMenu nav {
+	margin-top: 4px;
+}
+
+.b-folders {
+	padding-right: 0;
+}
+
+.messageList, .b-content.messageView {
+	margin-right: 8px;
+}
+
+
+@media screen and (max-width: 799px) {
+	.messageList, .b-content.messageView{
+		margin: auto 8px;
+	}
+
+	.btn-toolbar {
+		margin-left: 8px;
+	}
+
+	#V-Login {
+		width: 85%;
+	}
+
+	#rl-left {
+		box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+	}
+}
+
+#V-Login, #V-AdminLogin {
+	::placeholder {
+		color: var(--login-color,rgba(255,255,255,.8));
+	}
+}
+
+.LoginView .descWrapper {
+	margin-bottom: 30px;
+	padding-left: 40px;
+	text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+	.LoginView .descWrapper {
+		padding-left: 4vw;
+	}
+}
+
+span[data-i18n="SEARCH/UNSEEN"], .e-checkbox .fontastic {
+	color: var(--folders-disabled-color, #666);
+}
+
+.e-checkbox {
+	padding-left: 7px;
+	vertical-align: middle;
+}
+
+.messageItemHeader {
+
+	/* .fromPic {
+		margin-top: -.24em!important;
+	} */
+
+	div [class="informationShort"] {
+		margin-top: 5px!important;
+		height: 100%;
+	}
+
+}
+
+.messageTags {
+	display: none!important;
+	.btn-group {
+		height: 0;
+	}
+}
+
+html:not(.rl-left-panel-disabled) #rl-left {
+	resize: none;
+}
+
+#rl-loading .icon-spinner {
+	margin-top: 5px;
+}
+
+.fromPic {
+	margin-bottom: -0.28em!important;
+	border-radius: 100%!important;
+}
+
+a.btn.buttonMoreSearch {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu.right-edge {
+	border-radius: 3px;
+	::before {
+		vertical-align: middle;
+	}
+}
+
+.informationShort i {
+	vertical-align: bottom!important;
+}
+
+.subjectParent {
+	display: flex;
+	align-items: center;
+}
+
+button::before, .senderParent::before {
+	vertical-align: middle;
+}
+
+.pull-right {
+    display: flex;
+    gap: .3em;
+}
+
+.squire-toolbar.btn-toolbar {
+    padding: 8px 5px;
+	.btn {
+		vertical-align: middle;
+	}
+}
+
+.b-content hr {
+	background-color: black;
+	border: none;
+	height: 1px;
+}
