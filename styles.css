@@ -52,7 +52,7 @@
     background-repeat: repeat-x !important;
 }
 
-a[class="btn btn-logout fontastic"], .messageListItem .flagParent, .messageListItem .sizeParent, .messageListItem time {
+.btn.btn-logout.fontastic, .btn.btn-logout.fontastic, .messageListItem .flagParent, .messageListItem .sizeParent, .messageListItem time, .btn.btn-thin.fontastic.toggleLeft {
 	margin-top: auto!important;
 	margin-bottom: auto!important;
 }
@@ -62,7 +62,7 @@ a[class="btn btn-logout fontastic"], .messageListItem .flagParent, .messageListI
 	padding: 4px 0;
 }
 
-[class*=" icon-"]:not(a[class*="icon-folder-add"]):not(.attachmentIcon>*), [class^="icon-"]:not(.icon-spinner) {
+[class*=" icon-"]:not(a[class*="icon-folder-add"]):not(.attachmentIcon [class*="icon-"]), [class^="icon-"]:not(.icon-spinner) {
     width: 16px;
     height: 16px;
     line-height: 17px;
@@ -95,22 +95,56 @@ ul[class="b-folders-system"], #V-SettingsMenu nav {
 	margin-right: 8px;
 }
 
+#V-SettingsPane, .rl-mobile.rl-left-panel-disabled #V-AdminPane {
+	margin-right: 8px;
+	margin-left: 8px;
+	@media screen and (min-width: 800px) {
+		margin-left: 0;
+	}
+}
+
+#V-AdminPane .b-toolbar {
+	color: var(--main-color);
+	text-shadow: none;
+}
+
 
 @media screen and (max-width: 799px) {
+	
+	#rl-app {
+		background-image: var(--main-bg-image);
+	}
+
 	.messageList, .b-content.messageView{
 		margin: auto 8px;
 	}
 
-	.btn-toolbar {
+	.btn.btn-thin.fontastic.toggleLeft, .btn.buttonClose.fontastic {
 		margin-left: 8px;
 	}
 
-	#V-Login {
+	#rl-left .b-toolbar .btn.btn-thin.fontastic.toggleLeft {
+		margin-left: 0;
+	}
+
+	#V-SettingsPane .btn-toolbar {
+		left: 0;
+	}
+
+	#V-Login, #V-AdminLogin {
 		width: 85%;
 	}
 
-	#rl-left {
+	#rl-left:not(#rl-left:has(> #V-AdminMenu)) {
 		box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+	}
+
+	#rl-app #V-SettingsPane {
+		margin-right: 8px;
+	}
+
+	.rl-left-panel-disabled #rl-left {
+		display: none;
 	}
 }
 
@@ -132,7 +166,7 @@ ul[class="b-folders-system"], #V-SettingsMenu nav {
 	}
 }
 
-span[data-i18n="SEARCH/UNSEEN"], .e-checkbox .fontastic {
+span[data-i18n="SEARCH/UNSEEN"], #rl-left .e-checkbox .fontastic {
 	color: var(--folders-disabled-color, #666);
 }
 
@@ -142,10 +176,6 @@ span[data-i18n="SEARCH/UNSEEN"], .e-checkbox .fontastic {
 }
 
 .messageItemHeader {
-
-	/* .fromPic {
-		margin-top: -.24em!important;
-	} */
 
 	div [class="informationShort"] {
 		margin-top: 5px!important;
@@ -186,6 +216,19 @@ a.btn.buttonMoreSearch {
 	}
 }
 
+.dropdown-menu.show {
+	border-radius: 3px;
+	margin-left: 8px;
+}
+
+[id^="V-Popups"] {
+	width: auto!important;
+
+	@media screen and (max-width: 799px) {
+		margin: 8px;
+	}
+}
+
 .informationShort i {
 	vertical-align: bottom!important;
 }
@@ -215,4 +258,39 @@ button::before, .senderParent::before {
 	background-color: black;
 	border: none;
 	height: 1px;
+}
+
+.dropdown-menu li a i {
+    vertical-align: unset!important;
+}
+
+.btn.button-save .fontastic, .btn-toolbar .fontastic {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.b-folders .b-footer {
+    padding-bottom: 14px;
+}
+
+.b-view-content {
+	.control-group {
+		display: flex;
+		justify-content: start;
+		padding-left: 2em;
+		padding-right: 2em;
+		label {
+			width: auto!important;
+			flex-shrink: 0;
+		}
+	}
+}
+
+li[role="presentation"] {
+    margin-right: 0;
+}
+
+.b-folders li a {
+	display: flex;
+	align-items: center;
 }
